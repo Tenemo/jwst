@@ -4,18 +4,17 @@ import { Box } from '@mui/material';
 import { imageGroups } from 'images/imagesList';
 
 import ImageTileGroup from './ImageTileGroup';
-import styles from './homePage.scss';
 
 export const HomePage = (): ReactElement => {
     return (
         <Box
-            className={styles.homePage}
             component="main"
-            px={2}
+            px={3}
             sx={{
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'center',
+                height: '100%',
             }}
         >
             {imageGroups.map((imageGroup) => (

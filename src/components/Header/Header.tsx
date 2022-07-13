@@ -14,6 +14,7 @@ export const Header = (): ReactElement => {
             sx={{
                 borderBottom: `1px solid ${theme.palette.text.primary}`,
                 p: 2,
+                justifyContent: 'flex-end',
             }}
         >
             <Link

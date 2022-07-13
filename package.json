@@ -1,6 +1,6 @@
 {
     "name": "jwst",
-    "version": "0.0.1",
+    "version": "0.2.0",
     "author": "Piotr Piech <piotr@piech.dev>",
     "license": "UNLICENSED",
     "description": "Webb vs Hubble",

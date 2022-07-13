@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material';
 import { ImageGroup } from 'images/imagesList';
 
 import ImageTile from './ImageTile';
+import ImageDescription from '../ImageDescription';
 
 type Props = {
     imageGroup: ImageGroup;
@@ -32,7 +33,7 @@ export const ImageTileGroup = ({
                     />
                 ))}
             </Box>
-            <Box>{description}</Box>
+            <ImageDescription description={description} />
         </Box>
     );
 };
