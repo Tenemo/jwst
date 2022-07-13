@@ -1,11 +1,21 @@
-import React, { ReactElement, Fragment } from 'react';
-import { Box, useMediaQuery } from '@mui/material';
+import React, { ReactElement, Fragment, useState, memo } from 'react';
+import {
+    Box,
+    useMediaQuery,
+    Dialog,
+    Button,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+} from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 import { INSTRUMENT_LINKS, Image } from 'images/imagesList';
 
 type Props = {
     image: Image;
+    description: string;
 };
 
 export const ImageTile = ({
@@ -22,7 +32,10 @@ export const ImageTile = ({
         instruments,
         exposureInDays,
     },
+    description,
 }: Props): ReactElement => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const theme = useTheme();
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
     const imageWidth = isLg ? 600 : 300;
@@ -46,15 +59,20 @@ export const ImageTile = ({
                     flexDirection: 'column',
                 }}
             >
-                <img
-                    alt={title}
-                    src={imageUrl}
-                    srcSet={`
+                <Button
+                    onClick={() => setIsModalOpen(true)}
+                    sx={{ all: 'unset', cursor: 'pointer' }}
+                >
+                    <img
+                        alt={title}
+                        src={imageUrl}
+                        srcSet={`
                         ${imageUrl} dpr=1 1x,
                         ${imageUrl} dpr=2 2x,
                         ${imageUrl} dpr=3 3x,
                     `}
-                />
+                    />
+                </Button>
             </Box>
             <a href={postUrl}>News post by STScI</a>
             <Box>
@@ -84,8 +102,38 @@ export const ImageTile = ({
                     </Fragment>
                 ))}
             </Box>
+
+            <Dialog
+                aria-labelledby="image-modal-title"
+                fullScreen
+                onClose={() => setIsModalOpen(false)}
+                open={isModalOpen}
+            >
+                <DialogTitle id="image-modal-title">{title}</DialogTitle>
+                <DialogContent>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <img
+                            alt={title}
+                            src={limitedResolutionUrl}
+                            width="100%"
+                        />
+                    </Box>
+                    <DialogContentText>{description}</DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button autoFocus onClick={() => setIsModalOpen(false)}>
+                        Close
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Box>
     );
 };
 
-export default ImageTile;
+export default memo(ImageTile);

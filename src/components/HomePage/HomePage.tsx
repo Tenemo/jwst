@@ -19,7 +19,10 @@ export const HomePage = (): ReactElement => {
             }}
         >
             {imageGroups.map((imageGroup) => (
-                <ImageTileGroup imageGroup={imageGroup} />
+                <ImageTileGroup
+                    key={imageGroup.groupName}
+                    imageGroup={imageGroup}
+                />
             ))}
         </Box>
     );

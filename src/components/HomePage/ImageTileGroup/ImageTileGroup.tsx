@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, memo } from 'react';
 import { Box, Typography } from '@mui/material';
 
 import { ImageGroup } from 'images/imagesList';
@@ -25,7 +25,11 @@ export const ImageTileGroup = ({
                 }}
             >
                 {images.map((image) => (
-                    <ImageTile image={image} />
+                    <ImageTile
+                        key={image.title}
+                        description={description}
+                        image={image}
+                    />
                 ))}
             </Box>
             <Box>{description}</Box>
@@ -33,4 +37,4 @@ export const ImageTileGroup = ({
     );
 };
 
-export default ImageTileGroup;
+export default memo(ImageTileGroup);
