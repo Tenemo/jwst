@@ -24,36 +24,25 @@ export const Header = (): ReactElement => {
             >
                 James Webb Space Telescope Images
             </Link>
-            <Box
+            <Link
+                href="https://github.com/Tenemo/jwst"
                 sx={{
+                    pt: '6px',
+                    cursor: 'pointer',
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                 }}
+                title="github.com/Tenemo/jwst"
             >
-                <Link
-                    href="https://github.com/Tenemo/jwst"
+                <GitHubIcon />
+                <Typography
                     sx={{
-                        pt: '6px',
-                        cursor: 'pointer',
+                        ml: 0.5,
+                        mt: 0.2,
                     }}
-                    title="github.com/Tenemo/jwst"
                 >
-                    <GitHubIcon />
-                </Link>
-                <Typography sx={{ ml: 1 }}>
-                    <Link
-                        href="https://github.com/Tenemo"
-                        sx={{
-                            pt: '6px',
-                            cursor: 'pointer',
-                        }}
-                        title="github.com/Tenemo"
-                    >
-                        by Piotr
-                    </Link>
+                    GitHub
                 </Typography>
-            </Box>
+            </Link>
         </Box>
     );
 };
