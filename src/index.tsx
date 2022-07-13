@@ -14,8 +14,7 @@ import { Provider } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import 'fonts/RobotoMono-Regular.woff2';
-import 'fonts/RobotoMono-Regular.woff';
+import 'fonts/Roboto-Regular.ttf';
 
 import { darkTheme } from 'styles/theme';
 import { store, persistor } from 'store/configureStore';

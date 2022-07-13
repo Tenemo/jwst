@@ -4,7 +4,7 @@
 
 Images from [webbtelescope.org](https://webbtelescope.org/resource-gallery/images).
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2cbf1c82-ba06-465f-a26b-3784b1920d13/deploy-status)](https://app.netlify.com/sites/webb-vs-hubble/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/49e7397b-00a6-4d91-95ba-dd062422187a/deploy-status)](https://app.netlify.com/sites/jwst/deploys)
 
 #### Disclaimers
 

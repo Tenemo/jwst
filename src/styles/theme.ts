@@ -11,6 +11,6 @@ export const darkTheme = createTheme({
         },
     },
     typography: {
-        fontFamily: `"Roboto Mono", "Courier New", "Courier", monospace`,
+        fontFamily: `"Roboto", sans-serif`,
     },
 });

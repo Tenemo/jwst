@@ -26,11 +26,10 @@ body {
     color: #ddd;
     background-color: #222;
     @font-face {
-        font-family: "Roboto Mono";
-        src: url("../fonts/RobotoMono-Regular.woff2") format("woff2"),
-            url("../fonts/RobotoMono-Regular.woff") format("woff");
+        font-family: "Roboto";
+        src: url("../fonts/Roboto-Regular.ttf") format("ttf");
     }
-    font-family: "Roboto Mono", "Courier New", "Courier", monospace;
+    font-family: "Roboto", sans-serif;
     height: 100%;
     display: flex;
     flex-direction: column;
