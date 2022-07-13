@@ -8,6 +8,7 @@ import {
     DialogContent,
     DialogContentText,
     DialogTitle,
+    Grid,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -29,6 +30,7 @@ export const ImageTile = ({
         limitedResolutionUrl,
         limitedResolutionSize,
         limitedResolution,
+        textDescriptionUrl,
         instruments,
         exposureInDays,
     },
@@ -76,34 +78,47 @@ export const ImageTile = ({
                     />
                 </Button>
             </Box>
-            <a href={postUrl}>News post by STScI</a>
-            <Box>
-                <a href={fullResolutionUrl}>Full resolution</a>
-                &nbsp;({fullResolution},&nbsp;
-                {fullResolutionSize})
-            </Box>
-            <Box>
-                <a href={limitedResolutionUrl}>Lower resolution</a>
-                &nbsp;({limitedResolution},&nbsp;
-                {limitedResolutionSize})
-            </Box>
-            <Box>Exposure time: &lt;{exposureInDays * 24}h</Box>
-            <Box>
-                Instruments:{' '}
-                {instruments.map((instrument) => (
-                    <Fragment key={instrument}>
-                        <a
-                            href={
-                                INSTRUMENT_LINKS[
-                                    instrument
-                                ] as unknown as string
-                            }
-                        >
-                            {instrument}
-                        </a>{' '}
-                    </Fragment>
-                ))}
-            </Box>
+            <Grid container spacing={2}>
+                <Grid item lg={4} sm={6}>
+                    <Box>
+                        <a href={postUrl}>News post by STScI</a>
+                    </Box>
+                    <Box>
+                        {' '}
+                        <a href={fullResolutionUrl}>Full resolution</a>
+                        &nbsp;({fullResolution},&nbsp;
+                        {fullResolutionSize})
+                    </Box>
+                    <Box>
+                        <a href={limitedResolutionUrl}>Lower resolution</a>
+                        &nbsp;({limitedResolution},&nbsp;
+                        {limitedResolutionSize})
+                    </Box>
+                </Grid>
+                <Grid item lg={8} sm={6}>
+                    <Box>Exposure time: &lt;{exposureInDays * 24}h</Box>
+                    <Box>
+                        Instruments:{' '}
+                        {instruments.map((instrument) => (
+                            <Fragment key={instrument}>
+                                <a
+                                    href={
+                                        INSTRUMENT_LINKS[
+                                            instrument
+                                        ] as unknown as string
+                                    }
+                                >
+                                    {instrument}
+                                </a>{' '}
+                            </Fragment>
+                        ))}
+                    </Box>
+                    <Box>
+                        <a href={textDescriptionUrl}>Technical description</a>
+                        &nbsp;(PDF)
+                    </Box>
+                </Grid>
+            </Grid>
 
             <Dialog
                 aria-labelledby="image-modal-title"
