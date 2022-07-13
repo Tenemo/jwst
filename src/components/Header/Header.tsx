@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { useTheme, Box, Link } from '@mui/material';
+import { useTheme, Box, Link, Typography } from '@mui/material';
 import { GitHub as GitHubIcon } from '@mui/icons-material';
 
 export const Header = (): ReactElement => {
@@ -13,7 +13,7 @@ export const Header = (): ReactElement => {
             justifyContent="space-between"
             sx={{
                 borderBottom: `1px solid ${theme.palette.text.primary}`,
-                p: 1,
+                p: 2,
             }}
         >
             <Link
@@ -24,16 +24,36 @@ export const Header = (): ReactElement => {
             >
                 James Webb Space Telescope Images
             </Link>
-            <Link
-                href="https://github.com/Tenemo/jwst"
+            <Box
                 sx={{
-                    pt: '6px',
-                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
-                title="github.com/Tenemo/jwst"
             >
-                <GitHubIcon />
-            </Link>
+                <Link
+                    href="https://github.com/Tenemo/jwst"
+                    sx={{
+                        pt: '6px',
+                        cursor: 'pointer',
+                    }}
+                    title="github.com/Tenemo/jwst"
+                >
+                    <GitHubIcon />
+                </Link>
+                <Typography sx={{ ml: 1 }}>
+                    <Link
+                        href="https://github.com/Tenemo"
+                        sx={{
+                            pt: '6px',
+                            cursor: 'pointer',
+                        }}
+                        title="github.com/Tenemo"
+                    >
+                        by Piotr
+                    </Link>
+                </Typography>
+            </Box>
         </Box>
     );
 };
