@@ -10,11 +10,10 @@ export const Header = (): ReactElement => {
             alignItems="center"
             component="header"
             display="flex"
-            justifyContent="space-between"
             sx={{
                 borderBottom: `1px solid ${theme.palette.text.primary}`,
                 p: 2,
-                justifyContent: 'flex-end',
+                justifyContent: 'space-between',
             }}
         >
             <Link
