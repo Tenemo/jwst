@@ -18,6 +18,7 @@ export const HomePage = (): ReactElement => {
                     exposureInDays,
                 }) => (
                     <Box
+                        key={title}
                         pb={4}
                         sx={{
                             display: 'flex',
