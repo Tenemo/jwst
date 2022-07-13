@@ -37,8 +37,20 @@ export const ImageTile = ({
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const theme = useTheme();
-    const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-    const imageWidth = isLg ? 600 : 300;
+    let imageWidth = 300;
+    if (useMediaQuery(theme.breakpoints.up('xs'))) {
+        imageWidth = 550;
+    }
+    if (useMediaQuery(theme.breakpoints.up('sm'))) {
+        imageWidth = 550;
+    }
+    if (useMediaQuery(theme.breakpoints.up('md'))) {
+        imageWidth = 600;
+    }
+    if (useMediaQuery(theme.breakpoints.up('lg'))) {
+        imageWidth = 800;
+    }
+
     const imageUrl = `${optimizedUrl}?auto=format&fit=clip&w=${imageWidth}`;
 
     return (
@@ -66,11 +78,7 @@ export const ImageTile = ({
                     <img
                         alt={title}
                         src={imageUrl}
-                        srcSet={`
-                        ${imageUrl} dpr=1 1x,
-                        ${imageUrl} dpr=2 2x,
-                        ${imageUrl} dpr=3 3x,
-                    `}
+                        style={{ maxWidth: '100%' }}
                     />
                 </Button>
             </Box>
