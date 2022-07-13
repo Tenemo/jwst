@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Fragment } from 'react';
 import { Box } from '@mui/material';
 
 import { images, INSTRUMENT_LINKS } from 'images/imagesList';
@@ -47,7 +47,7 @@ export const HomePage = (): ReactElement => {
                         <Box>
                             Instruments:{' '}
                             {instruments.map((instrument) => (
-                                <>
+                                <Fragment key={instrument}>
                                     <a
                                         href={
                                             INSTRUMENT_LINKS[
@@ -57,7 +57,7 @@ export const HomePage = (): ReactElement => {
                                     >
                                         {instrument}
                                     </a>{' '}
-                                </>
+                                </Fragment>
                             ))}
                         </Box>
                     </Box>
