@@ -37,18 +37,15 @@ export const ImageTile = ({
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const theme = useTheme();
-    let imageWidth = 300;
-    if (useMediaQuery(theme.breakpoints.up('xs'))) {
-        imageWidth = 550;
-    }
+    let imageWidth = 280;
     if (useMediaQuery(theme.breakpoints.up('sm'))) {
-        imageWidth = 550;
+        imageWidth = 570;
     }
     if (useMediaQuery(theme.breakpoints.up('md'))) {
-        imageWidth = 600;
+        imageWidth = 670;
     }
     if (useMediaQuery(theme.breakpoints.up('lg'))) {
-        imageWidth = 800;
+        imageWidth = 780;
     }
 
     const imageUrl = `${optimizedUrl}?auto=format&fit=clip&w=${imageWidth}`;
